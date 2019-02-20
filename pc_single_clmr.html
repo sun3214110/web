@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>0元炒股_利润放大8倍</title>
+    <meta name="keywords" content="0元炒股_利润放大8倍" />
+    <meta name="description" content="0元炒股_利润放大8倍" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name = "format-detection" content = "telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="applicable-device" content="mobile">
+    <link rel="stylesheet" type="text/css" href="css/pc_single_clmr.css" />
+	<link rel="shortcut icon" href="https://www.stock166.cn/img/bitbug_favicon_1.ico"/>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.kxbdMarquee.js"></script>
+</head>
+<body>
+
+<div class="banner">
+	<div class="form" id="1">
+		<div class="login_main">
+			<div class="lgm_div" style="display: block;">
+				<ul class="login_main_ul">
+					<li>
+						<input type="hidden" id="brokerId" value="100003" readonly="readonly">
+						<input type="phone" id="phone" value="请输入手机号"/>
+					</li>
+					<li>
+						<input type="text" class="i_pswd" id="password" value="请输入6位以上密码"/>
+					</li>
+					<li>
+						<input class="yzm_input" type="text" id="code" value="请输入验证码"/>
+						<span class="yzm_btn fr blue" onclick="sendMobile()">发送验证码</span>
+					</li>
+				</ul>
+				<a href="javascript:void(0);" class="login_btn animated infinite pulse02" onclick="register()">立即注册</a>
+			</div>
+		
+			<div id="imageCodeBox" style="display:none;">
+				<!-- 遮罩层 -->
+				<div class="mask"></div>
+				<!-- 验证码弹窗 -->
+				<div class="yzm_layer">
+					<div class="tit">图形验证码</div>
+					<div class="contain">
+						<input type="text" placeholder="输入图形验证码" id="image_code_text">
+		
+						<img src="#" id="image" onclick="refreshImage();">
+		
+					</div>
+					<div class="btn" onclick="imageConfirm();">确认</div>
+				</div>
+			</div>
+		</div>
+		<div class="login_alert_tip" style="display: none">
+			<i class="loc_icon"></i>
+			<p>请稍等</p>
+		</div>
+		<div class="login_tip_fixed" style="display: none">
+			<span class="login_tip_tishi">错误提示</span>
+		</div>
+		<div></div>
+	</div>
+</div>
+
+<div class="warp">
+	<div class="warp1">
+		<div class="main">
+			<div class="cont_top">
+				<ul>
+					<li>
+						<i class="icon1"></i>
+						<p>新人送2000元资金<br>盈利可提现</p>
+					</li>
+					<li>
+						<i class="icon2"></i>
+						<p>手机号注册登录<br>即可交易，无需开户</p>
+					</li>
+					<li>
+						<i class="icon3"></i>
+						<p>专业风控团队，放心炒股<br>资金随时提现</p>
+					</li>
+					<li>
+						<i class="icon4"></i>
+						<p>5-8倍资金任你选<br>抓牛股1天赚8个涨停</p>
+					</li>
+				</ul>
+			</div>
+			<div class="marque">
+				<div class="marque_tit">已有超<span class="org">20000</span>明智小伙伴领取成功</div>
+				<div class="marque_cont" id="marquee">
+					<ul>
+						<li>17:30:28 周**领取2000元</li>
+						<li>16:45:35 陈**领取4000元</li>
+						<li>14:24:16 张**领取2000元</li>
+						<li>14:10:20 沈**领取2000元</li>
+						<li>13:02:18 周**领取8000元</li>
+						<li>13:00:21 赵**领取4000元</li>
+						<li>12:35:22 李**领取2000元</li>
+					</ul>
+				</div>
+			</div>
+			<a class="btn1" href="#1">马上注册领取</a>
+		</div>
+	</div>
+	<div class="foot">
+		<a class="btn2" href="#1">马上注册领取</a>
+		<p class="fx_tip">投资有风险，入市需谨慎</p>
+	</div>
+</div>
+
+<div class="alert_warp">
+	<div class="alert_bg"></div>
+	<div class="bgfff"></div>
+	<div class="alert_main">	
+		<div class="alert_main_colse" onclick="none_alert();"></div>
+		<div class="alert_tit">恭喜您注册成功</div>
+		<div class="alert_t1">赶紧免费下载<b>黑牛策略</b>登录试玩吧</div>
+		<div class="erweima"></div>
+		<div class="alert_t2">
+			<span class="bit">下载须知：</span>
+			<p class="alert_ct">1、安卓、IOS应用市场均可下载</p>
+			<p class="alert_ct">2、或直接扫描上方二维码下载</p>
+		</div>
+	</div>	
+	
+</div>
+
+<script type="text/javascript">
+(function(){$("#marquee").kxbdMarquee({direction:"up",isEqual:false});}());
+
+
+function none_alert(){
+	$(".alert_warp").hide();
+	window.location.reload()
+}
+$(".login_main_ul li input").focus(function(){
+	var wz = $(this).val();
+	if( wz == "请输入手机号" || wz == "请输入6位以上密码" || wz == "请输入验证码"){
+		$(this).val("");
+	}
+	$(this).parent("li").css({"border-bottom":"2px solid #002bdc"});
+})
+$(".login_main_ul li input").blur(function(){
+	var index = $(this).parent("li").index();
+	var wz = $(this).val();
+	if( wz == "" || wz == "" || wz == ""){
+		if(index == 0){
+			$(this).val("请输入手机号");
+		}else if(index == 1){
+			$(this).val("请输入6位以上密码");
+		}else if(index == 2){
+			$(this).val("请输入验证码");
+		}
+	}
+	$(".login_main_ul li").css({"border-bottom":"1px solid #ededed"});
+	
+})
+var qty = 1;   
+
+function refreshImage() {
+	var mobile = $('#phone').val();
+	var url = "https://account.stock166.cn/account/smsAuthCode?mobile="+mobile+"&random="+Math.random();
+	$('#image').attr("src",url);
+}
+
+function getImageCode(phone){
+	var jsonData = {
+		mobile: phone
+	};
+	//需要输入图形验证码
+	var codeText = $.trim($('#image_code_text').val());
+	console.log(codeText);
+	if (!codeText || codeText == ""){
+		showMsg("请输入图形验证码");
+		return
+	}else if (codeText.length != 5) {
+		showMsg("请输入5位图形验证码");
+		return
+	}else{
+		jsonData.clientImg = codeText
+	}
+	$.ajax({
+		type: "GET",
+		url: "https://account.stock166.cn/account/sendMobile",
+		data: jsonData,
+		dataType: 'json',
+		cache: false,
+		success: function (data) {
+			console.profile(data.code);
+			$('#imageCodeBox').hide();
+			if (data.code == 0) {
+				stout();
+			} else {
+				showMsg(data.msg);
+			}
+		}
+	})
+}
+
+function sendMobile() {
+	if ($(".yzm_btn").hasClass("blue")) {
+		
+		var phone = $('#phone').val();
+		if (!phone || phone == "") {
+			showMsg("手机号不能为空");
+			return;
+		}
+		var myreg = /^[1][1-9][0-9]{9}$/;
+		if (!myreg.test(phone)) {
+			showMsg("手机号格式不正确");
+			return
+		}
+		if (qty == 200001) {
+			///展示验证码
+			$('#image_code_text').val("");
+			var url = "https://account.stock166.cn/account/smsAuthCode?mobile="+phone+"&random="+Math.random();
+			$('#image').attr("src",url);
+			$('#imageCodeBox').show();
+		} else {
+			var jsonData = {
+				mobile:phone
+			};
+			$.ajax({
+				type: "GET",
+				url: "https://account.stock166.cn/account/sendMobile",
+				data: jsonData,
+				dataType: 'json',
+				cache: false,
+				success: function (data) {
+					console.profile(data.code);
+					if (data.code == 0) {
+						stout();
+					} else {
+						showMsg(data.msg);
+						qty=data.code;
+						if (qty == 200001) {
+							///展示验证码
+							$('#image_code_text').val("");
+							var url = "https://account.stock166.cn/account/smsAuthCode?mobile="+phone+"&random="+Math.random();
+							$('#image').attr("src",url);
+							$('#imageCodeBox').show();
+						}
+					}
+				}
+			})
+		}
+	}
+}
+
+function imageConfirm() {
+	$('#imageCodeBox').hide();
+	var phone = $('#phone').val();
+	getImageCode(phone);
+}
+
+function showMsg(msg) {
+	$('.login_tip_tishi').html(msg);
+	$('.login_tip_fixed').show();
+	setTimeout(function () {
+		$('.login_tip_fixed').hide();
+	}, 2000);
+}
+
+function register() {
+	var phone = $('#phone').val();
+	if (!phone || phone == "") {
+		showMsg("手机号不能为空");
+		return
+	}
+	// var myreg = /^[1][1-9][0-9]{9}$/;
+	if (phone.length != 11) {
+		showMsg("手机号格式不正确");
+		return
+	}
+	var code = $('#code').val();
+	if (!code || code == "") {
+		showMsg("验证码不能为空");
+		return
+	}
+	var codereg = /^[0-9]{4}$/;
+	if (!codereg.test(code)) {
+		showMsg("请输入4位验证码");
+		return
+	}
+	var password = $('#password').val();
+	if (!password || password == "") {
+		showMsg("密码不能为空");
+		return
+	}
+	var pwdreg = /^[0-9A-Za-z]{6,16}$/;
+	if (!pwdreg.test(password)) {
+		showMsg("密码格式不正确，请使用6-16位英文字母或数字");
+		return
+	}
+	var broker = $('#brokerId').val();
+	var urlhost = window.location.href;
+	$(".login_alert_tip").show();
+	$.ajax({
+		type: "POST",
+		url: "https://account.stock166.cn/account/registry",
+		data: {
+			"mobile": phone,
+			"pwd": window.btoa(password) ,
+			"authCode": code,
+			"source" : 5,
+			"broker": broker,
+			"urlHost": urlhost
+		},
+		dataType: 'json',
+		cache: false,
+		success: function (data) {
+			console.log(data);
+			$(".login_alert_tip").hide();
+			if (data.code == 0) {
+				$(".alert_warp").show();
+				//清空表单
+				$('#phone').val("");
+				$('#code').val("");
+				$('#password').val("");
+			} else {
+				showMsg(data.msg);
+			}
+
+		}
+	});
+}
+
+function stout() {
+	if ($(".yzm_btn").hasClass("blue")) {
+		$(".yzm_btn").removeClass("blue");
+		$(".yzm_btn").text("60s后重新发送");
+		var ti = parseInt($(".yzm_btn").text()); //parseInt('60s后重新发送'); ==> 60
+		var st = ti * 1000;
+		setInterval(function () {
+			if (ti > 1) {
+				ti -= 1
+				$(".yzm_btn").text(ti + "s后重新发送");
+			}
+		}, 1000);
+		setTimeout(function () {
+			$(".yzm_btn").text("发送验证码");
+			$(".yzm_btn").addClass("blue");
+		}, st)
+	}
+}
+</script>
+</body>
+</html>
